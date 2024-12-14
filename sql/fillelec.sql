@@ -46,7 +46,6 @@ create table commande (
     date_commande date not null,
     statut enum('en preparation', 'en chemin', 'livré') not null,
     montant_total float(10, 2),
-    mode_de_paiement enum('visa', 'mastercard', 'amex', 'paypal'),
     adresse_client varchar(50) not null,
     primary key (id_commande),
     foreign key (id_client) references client(id_client),
