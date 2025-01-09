@@ -14,7 +14,7 @@ if (isset($_POST['Connexion'])) {
         $_SESSION['nom'] = $unUser['nom'];
         $_SESSION['prenom'] = $unUser['prenom'];
         $_SESSION['role'] = $unUser['role'];
-        header("Location: index.php?page=5");
+        header("Location: index.php?page=1");
         exit();
     } else {
         $error = "Identifiants incorrects. Veuillez réessayer.";
@@ -34,17 +34,48 @@ if (isset($_GET['page']) && $_GET['page'] == 6) {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fillelec</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Bienvenue sur Fillelec</h1>
+        <nav class="navigation">
+            <div class="link-container">
+                <a href="index.php?page=1">Accueil</a>
+                <span></span>
+            </div>
+            <div class="link-container">
+                <a href="index.php?page=2">À propos</a>
+                <span></span>
+            </div>
+            <div class="link-container">
+                <a href="index.php?page=3">Contact</a>
+                <span></span>
+            </div>
+            <?php if (isset($_SESSION['email'])) : ?>
+                <div class="link-container">
+                    <a href="index.php?page=4">Tableau de bord</a>
+                    <span></span>
+                </div>
+                <div class="link-container">
+                    <a href="index.php?page=6">Déconnexion</a>
+                    <span></span>
+                </div>
+            <?php else : ?>
+                <div class="link-container">
+                    <a href="index.php?page=5">Connexion</a>
+                    <span></span>
+                </div>
+            <?php endif; ?>
+        </nav>
+    </header>
+
     <main>
         <?php
         // Déterminer la page à afficher en fonction du paramètre 'page' dans l'URL
-        if (isset($_GET['page'])) {
-            $page = $_GET['page'];
-        } else {
-            $page = 1; // Par défaut, afficher la page d'accueil
-        }
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
         // Inclusion conditionnelle des pages en fonction de la variable 'page'
         switch ($page) {
@@ -52,7 +83,7 @@ if (isset($_GET['page']) && $_GET['page'] == 6) {
                 require_once("controleur/home.php");
                 break;
             case 2:
-                require_once("controleur/about.php");
+                require_once("controleur/apropos.php");
                 break;
             case 3:
                 require_once("controleur/contact.php");
@@ -66,7 +97,7 @@ if (isset($_GET['page']) && $_GET['page'] == 6) {
                 break;
             case 5:
                 // Si l'utilisateur n'est pas connecté, afficher la page de connexion
-                if (! isset($_SESSION['email'])) {
+                if (!isset($_SESSION['email'])) {
                     if (isset($error)) {
                         echo "<p style='color:red;'>$error</p>";
                     }
@@ -79,9 +110,4 @@ if (isset($_GET['page']) && $_GET['page'] == 6) {
                 echo "<p>Page introuvable.</p>";
         }
         ?>
-    </main>
-</body>
-</html>
-
-<?php ob_end_flush(); ?>
-
+    </main
