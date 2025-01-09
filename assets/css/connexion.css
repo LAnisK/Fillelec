@@ -1,16 +1,31 @@
-body {
-    font-family: Arial, sans-serif;
+/* S'assurer que le body et html occupent toute la largeur de la page */
+html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333;
 }
 
+/* Styles du body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 120px; /* Ajoute un espace pour que la nav ne chevauche pas */
+}
 
+/* Texte de bienvenue */
+.welcome-text {
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 60px; /* Décalage pour que le texte soit bien sous la barre de navigation */
+}
+
+/* Container du formulaire de connexion, centré verticalement et horizontalement */
 .login-container {
     background-color: #fff;
     padding: 30px;
@@ -18,17 +33,10 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    margin: 20px auto; /* Centrer le formulaire */
 }
 
-h1 {
-    font-size: 24px;
-    color: #007bff;
-    margin-bottom: 20px;
-    background-color: #007bff;
-    
-    
-}
-
+/* Champs de saisie */
 .input-field {
     width: 100%;
     padding: 10px;
@@ -43,6 +51,7 @@ h1 {
     outline: none;
 }
 
+/* Bouton de connexion */
 .login-button {
     width: 100%;
     padding: 12px;
@@ -58,6 +67,7 @@ h1 {
     background-color: #0056b3;
 }
 
+/* Lien mot de passe oublié */
 .forgot-password {
     font-size: 14px;
     color: #007bff;
@@ -70,6 +80,7 @@ h1 {
     text-decoration: underline;
 }
 
+/* Logo */
 .logo {
     width: 100px;
     margin-bottom: 20px;
