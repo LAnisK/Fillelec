@@ -5,22 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fillelec - Page de connexion</title>
     <link rel="stylesheet" href="assets/css/connexion.css">
-    <link rel="stylesheet" href="assets/css/nav_bar.css">
 </head>
 <body>
-    <div class="welcome-text">
-        <h1>Bienvenue sur Fillelec</h1>
-    </div>
+    <br>
+    <br>
+    <br>
+    <br>
     <center>
-    <div>
-        <nav>
-        <div class="link-container"><a href="index.php?page=1">Accueil</a></div>
-        <div class="link-container"><a href="index.php?page=2">À propos</a></div>
-        <div class="link-container"><a href="index.php?page=3">Contact</a></div>
-        <div class="link-container"><a href="index.php?page=7">Inscription</a></div>
-        </nav>
-    </div>
-    
     <div class="login-container">
         <img src="img/Fillelec.jpeg" alt="Logo Fillelec" class="logo">
         <h2>Se connecter à Fillelec</h2>

@@ -7,16 +7,6 @@
 </head>
 <body>
     <center>
-        <div>
-            <nav>
-                <div class="link-container"><a href="index.php?page=1">Accueil</a></div>
-                <div class="link-container"><a href="index.php?page=2">À propos</a></div>
-                <div class="link-container"><a href="index.php?page=3">Contact</a></div>
-                <div class="link-container"><a href="index.php?page=5">Connexion</a></div>
-            </nav>
-        </div>
-        <br>
-
         <div class="signup-container">
             <h2>Inscription à Fillelec</h2>
             <form method="POST">
@@ -27,8 +17,8 @@
                 <input type="text" name="adresse" placeholder="Adresse domicile" required>
                 <input type="password" name="mdp" placeholder="Mot de passe" required>
                 <button type="submit" name="Valider">S'inscrire</button>
+                <a href="index.php?page=5">Déjà inscrit ? Connectez-vous</a>
             </form>
-            <a href="index.php?page=5">Déjà inscrit ? Connectez-vous</a>
         </div>
     </center>
 </body>

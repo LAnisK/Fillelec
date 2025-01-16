@@ -1,0 +1,43 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Style de la barre de navigation */
+        nav {
+            background-color: #007BFF; /* Bleu foncé pour le fond de la barre */
+            display: flex;
+            justify-content: center; /* Par défaut, les liens sont à gauche */
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        /* Style des liens de navigation */
+        .link-container {
+            margin: 0 15px;
+            display: inline-block; /* Afficher les éléments sur une ligne */
+        }
+
+        .link-container a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            display: block; /* Pour que le padding affecte le lien sur toute la zone */
+        }
+
+        .link-container a:hover {
+            background-color: #4a5b63; /* Couleur au survol */
+        }
+
+        /* Style pour le titre */
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        

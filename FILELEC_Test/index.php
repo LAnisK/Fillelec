@@ -38,9 +38,49 @@ if (isset($_GET['page']) && $_GET['page'] == 6) {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets\css\Nav_bar_index.css">
     <title>Fillelec</title>
 </head>
 <body>
+    <nav>
+        <center>
+        <h1>Bienvenue sur Fillelec</h1>
+
+        <div class="link-container">
+            <a href="index.php?page=1">Accueil</a>
+            <span></span>
+        </div>
+        <div class="link-container">
+            <a href="index.php?page=2">À propos</a>
+            <span></span>
+        </div>
+        <div class="link-container">
+            <a href="index.php?page=3">Contact</a>
+            <span></span>
+        </div>
+    <?php if (isset($_SESSION['email'])) : ?>
+        <div class="link-container">
+            <a href="index.php?page=4">Tableau de bord</a>
+            <span></span>
+        </div>
+        <div class="link-container">
+            <a href="index.php?page=6">Déconnexion</a>
+            <span></span>
+        </div>
+    <?php else : ?>
+        <div class="link-container">
+            <a href="index.php?page=5">Connexion</a>
+            <span></span>
+        </div>
+
+        <div class="link-container">
+            <a href="index.php?page=7">Inscription</a>
+            <span></span>
+        <div>
+            
+    <?php endif; ?>
+    </center>
+    </nav>
     <main>
         <?php
         // Déterminer la page à afficher en fonction du paramètre 'page' dans l'URL

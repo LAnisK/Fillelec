@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="assets/css/nav_bar.css">
 </head>
 <body>
-    <header>
-        <h1>Ajouter un message</h1>
-    </header>
     <main>
         
         <div class="contact-container">
