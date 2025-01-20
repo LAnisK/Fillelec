@@ -44,43 +44,43 @@ if (isset($_GET['page']) && $_GET['page'] == 6) {
 <body>
     <nav>
         <center>
-        <h1>Bienvenue sur Fillelec</h1>
+            <h1>Bienvenue sur Fillelec</h1>
+            <br>
+            <br>
+            <div class="link-container">
+                <a href="index.php?page=1">Accueil</a>
+                <span></span>
+            </div>
+            <div class="link-container">
+                <a href="index.php?page=2">À propos</a>
+                <span></span>
+            </div>
+            <div class="link-container">
+                <a href="index.php?page=3">Contact</a>
+                <span></span>
+            </div>
 
-        <div class="link-container">
-            <a href="index.php?page=1">Accueil</a>
-            <span></span>
-        </div>
-        <div class="link-container">
-            <a href="index.php?page=2">À propos</a>
-            <span></span>
-        </div>
-        <div class="link-container">
-            <a href="index.php?page=3">Contact</a>
-            <span></span>
-        </div>
-    <?php if (isset($_SESSION['email'])) : ?>
-        <div class="link-container">
-            <a href="index.php?page=4">Tableau de bord</a>
-            <span></span>
-        </div>
-        <div class="link-container">
-            <a href="index.php?page=6">Déconnexion</a>
-            <span></span>
-        </div>
-    <?php else : ?>
-        <div class="link-container">
-            <a href="index.php?page=5">Connexion</a>
-            <span></span>
-        </div>
-
-        <div class="link-container">
-            <a href="index.php?page=7">Inscription</a>
-            <span></span>
-        <div>
-            
-    <?php endif; ?>
-    </center>
+        <?php if (isset($_SESSION['email'])) : ?>
+            <div class="profile-container">
+                <img src="img\profil_logo.png" alt="Profil" class="profile-logo">
+                <div class="dropdown">
+                    <a href="index.php?page=8">Profil</a>
+                    <a href="index.php?page=6">Déconnexion</a>
+                </div>
+            </div>
+        <?php else : ?>
+            <div class="link-container">
+                <a href="index.php?page=5">Connexion</a>
+                <span></span>
+            </div>
+            <div class="link-container">
+                <a href="index.php?page=7">Inscription</a>
+                <span></span>
+            </div>
+        <?php endif; ?>
+        </center>
     </nav>
+
     <main>
         <?php
         // Déterminer la page à afficher en fonction du paramètre 'page' dans l'URL
@@ -133,6 +133,9 @@ if (isset($_GET['page']) && $_GET['page'] == 6) {
 
                     $unControleur->insertClient($tab);
                 }
+            case 8:
+                require_once("vue/vue_profil.php");
+                break;
 
                 // Afficher le formulaire d'inscription
                 require_once("vue/vue_inscription.php");
